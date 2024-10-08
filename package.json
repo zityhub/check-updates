@@ -1,6 +1,6 @@
 {
   "name": "@zityhub/check-updates",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "author": "Zityhub",
   "license": "MIT",
   "description": "Project that checks if your project has any dependencies that have been updated with a major version.",
