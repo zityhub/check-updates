@@ -20,9 +20,11 @@ jobs:
       with:
         node-version: '20'
         cache: 'pnpm'
+        registry-url: 'https://registry.npmjs.org'
     - name: Install dependencies
       run: pnpm install --production --frozen-lockfile
     - name: Publish to NPM
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       run: npm publish --access public
+
