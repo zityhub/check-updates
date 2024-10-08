@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { run } from 'npm-check-updates'
 import * as process from 'node:process'
 
