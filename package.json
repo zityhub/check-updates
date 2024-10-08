@@ -4,7 +4,14 @@
   "author": "Zityhub",
   "license": "MIT",
   "description": "Project that checks if your project has any dependencies that have been updated with a major version.",
-  "keywords": [],
+  "keywords": [
+    "dependencies",
+    "npm",
+    "package.json",
+    "update",
+    "upgrade",
+    "versions"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
