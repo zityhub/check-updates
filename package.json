@@ -1,6 +1,6 @@
 {
   "name": "check-updates",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Zityhub",
   "license": "MIT",
   "description": "Project that checks if your project has any dependencies that have been updated with a major version.",
@@ -23,9 +23,7 @@
     "format": "prettier . --write",
     "lint": "eslint . --fix"
   },
-  "peerDependencies": {
-
-  },
+  "peerDependencies": {},
   "dependencies": {
     "npm-check-updates": "^17.1.3"
   },
