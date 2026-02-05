@@ -3,6 +3,7 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
+    target-branch: "main"
 
     schedule:
       interval: "daily"
@@ -28,6 +29,7 @@ updates:
 
   - package-ecosystem: "npm"
     directory: "/"
+    target-branch: "main"
 
     schedule:
       interval: "weekly"
