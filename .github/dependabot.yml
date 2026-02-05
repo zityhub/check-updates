@@ -1,0 +1,55 @@
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "Europe/Madrid"
+
+    open-pull-requests-limit: 5
+
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+    labels:
+      - "dependencies"
+      - "security"
+      - "vulnerability"
+
+    commit-message:
+      prefix: "chore(security)"
+      include: "scope"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Madrid"
+
+    open-pull-requests-limit: 5
+
+    groups:
+      major-updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "major"
+
+    labels:
+      - "dependencies"
+      - "major-update"
+      - "breaking-change"
+
+    commit-message:
+      prefix: "chore(major)"
+      include: "scope"
