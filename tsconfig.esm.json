@@ -3,8 +3,9 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "types": [],
-    "noEmit": true
+    "outDir": "dist/esm",
+    "declaration": true,
+    "declarationDir": "dist/types"
   },
-  "include": ["index.ts", "eslint.config.mjs"]
+  "include": ["index.ts"]
 }
