@@ -5,7 +5,7 @@
   "license": "MIT",
   "description": "Project that checks if your project has any dependencies that have been updated with a major version.",
   "engines": {
-    "node": ">=22.13.0",
+    "node": ">=24.0.0",
     "npm": ">=10.9.2"
   },
   "packageManager": "pnpm@10.11.0",
