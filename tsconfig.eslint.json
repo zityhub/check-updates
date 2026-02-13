@@ -2,9 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "module": "ESNext",
-    "moduleResolution": "bundler",
-    "types": [],
-    "noEmit": true
+    "moduleResolution": "node"
   },
   "include": ["index.ts", "eslint.config.mjs"]
 }
