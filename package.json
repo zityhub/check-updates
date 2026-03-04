@@ -4,7 +4,7 @@
   "author": "Zityhub",
   "license": "MIT",
   "description": "Project that checks if your project has any dependencies that have been updated with a major version.",
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.30.3",
   "keywords": [
     "dependencies",
     "npm",
@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build:esm": "tsc -p tsconfig.esm.json",
+    "build:no-emit": "tsc -p tsconfig.esm.json --noEmit",
     "build:cjs": "tsc -p tsconfig.cjs.json && mv dist/cjs/index.js dist/cjs/index.cjs",
     "build": "rimraf dist && npm run build:esm && npm run build:cjs",
     "dev": "tsx index.ts",
@@ -42,18 +43,23 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "npm-check-updates": "^19.3.2"
+    "npm-check-updates": "^19.6.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@types/node": "^22.10.5",
-    "eslint": "^9.17.0",
-    "eslint-config-prettier": "^9.1.0",
-    "globals": "^15.14.0",
-    "prettier": "^3.4.2",
-    "rimraf": "^6.0.1",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.19.1"
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.3.3",
+    "eslint": "^9.39.3",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "rimraf": "^6.1.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
