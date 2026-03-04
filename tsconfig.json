@@ -3,7 +3,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "types": [],
+    "types": ["node"],
     "noEmit": true
   },
   "include": ["index.ts", "eslint.config.mjs"]
