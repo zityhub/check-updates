@@ -59,4 +59,3 @@ jobs:
           fi
       - name: Publish
         run: npm publish --access public --tag $PRERELEASE_TAG
-

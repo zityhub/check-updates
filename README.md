@@ -11,7 +11,7 @@ Install it as a development dependency:
 npm install -D @zityhub/check-updates
 ```
 
-Or run it directly using [npx](https://docs.npmjs.com/cli/v7/commands/npx): 
+Or run it directly using [npx](https://docs.npmjs.com/cli/v7/commands/npx):
 
 ```sh
 npx @zityhub/check-updates
@@ -68,5 +68,3 @@ It is recommended to add it as a script in your package.json for easier usage:
   }
 }
 ```
-
-
