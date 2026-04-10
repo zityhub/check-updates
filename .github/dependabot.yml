@@ -1,13 +1,13 @@
 version: 2
 
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
 
     schedule:
-      interval: "daily"
-      time: "08:00"
-      timezone: "Europe/Madrid"
+      interval: 'daily'
+      time: '08:00'
+      timezone: 'Europe/Madrid'
 
     open-pull-requests-limit: 5
 
@@ -15,18 +15,18 @@ updates:
       security-updates:
         applies-to: security-updates
         patterns:
-          - "*"
+          - '*'
 
       major-updates:
         applies-to: version-updates
         patterns:
-          - "*"
+          - '*'
         update-types:
-          - "major"
+          - 'major'
 
     labels:
-      - "dependencies"
+      - 'dependencies'
 
     commit-message:
-      prefix: "chore(deps)"
-      include: "scope"
+      prefix: 'chore(deps)'
+      include: 'scope'
