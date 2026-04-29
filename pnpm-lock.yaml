@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       npm-check-updates:
-        specifier: ^20.0.0
-        version: 20.0.0
+        specifier: ^21.0.0
+        version: 21.0.3
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -597,9 +597,9 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  npm-check-updates@20.0.0:
-    resolution: {integrity: sha512-qCs02x51irGf0okCttwv8lHEO2NxT903IJ2bKpG82kIzkm6pfT3CoWB5YIvqY/wi/DdnYRfI7eVfCYYymQgvCg==}
-    engines: {node: '>=20.0.0', npm: '>=8.12.1'}
+  npm-check-updates@21.0.3:
+    resolution: {integrity: sha512-8y0fqtxdo5JhwzxcS9rZd969tvPbSZ3MzQoG5Fj8eqL42t1Jsg5tjZCz8CYuXLE8LNbbyV+1xxR/f/T4AdPmdg==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0, npm: '>=10.0.0'}
     hasBin: true
 
   optionator@0.9.4:
@@ -1244,7 +1244,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  npm-check-updates@20.0.0: {}
+  npm-check-updates@21.0.3: {}
 
   optionator@0.9.4:
     dependencies:
