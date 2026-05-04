@@ -7,3 +7,5 @@ node_modules
 # Editors
 **/.idea
 .vscode
+
+.claude
