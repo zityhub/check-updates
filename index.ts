@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import { run } from 'npm-check-updates'
 import * as process from 'node:process'
+import { checkDependencies } from './src/check-dependencies'
+import { addExcludeToScript } from './src/add-exclude'
 
 type MessageLog = {
   type: {
@@ -34,43 +35,13 @@ const parseArguments = (args: string[]) => {
   return exclude
 }
 
-const hasVersion = (version?: number | null) => {
-  return version !== undefined && version !== null
+const main = async (args: string[]) => {
+  if (args.includes('--add-exclude')) return addExcludeToScript()
+
+  return checkDependencies(parseArguments(args))
 }
 
-const packagesToUpdate = async () => {
-  const upgraded = (await run({
-    filterResults: (
-      packageName,
-      { currentVersionSemver, upgradedVersionSemver }
-    ) => {
-      const currentMajor = parseInt(currentVersionSemver[0]?.major, 10)
-      const upgradedMajor = parseInt(upgradedVersionSemver?.major, 10)
-
-      if (hasVersion(currentMajor) && hasVersion(upgradedMajor))
-        return currentMajor !== upgradedMajor
-
-      return true
-    }
-  })) as { [key: string]: string }
-  return Object.keys(upgraded)
-}
-
-const main = async (exclude: string[]) => {
-  const packages = await packagesToUpdate()
-  const toUpdate = packages.filter(
-    (packageName) => !exclude.includes(packageName)
-  )
-
-  const prefix = `Major update available for:`
-  if (toUpdate.length) return Promise.reject(`${prefix} ${toUpdate.join(',')}`)
-
-  return Promise.resolve(
-    packages.length ? `${prefix} ${packages.join(',')}` : undefined
-  )
-}
-
-main(parseArguments(process.argv.slice(2)))
+main(process.argv.slice(2))
   .then((message) => {
     info('Job check-updates finished success', {
       type: {
