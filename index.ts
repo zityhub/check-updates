@@ -62,10 +62,12 @@ const main = async (exclude: string[]) => {
     (packageName) => !exclude.includes(packageName)
   )
 
-  const message = `Major update available for: ${packages.join(',')}`
-  if (toUpdate.length) return Promise.reject(message)
+  const prefix = `Major update available for:`
+  if (toUpdate.length) return Promise.reject(`${prefix} ${toUpdate.join(',')}`)
 
-  return Promise.resolve(packages.length ? message : undefined)
+  return Promise.resolve(
+    packages.length ? `${prefix} ${packages.join(',')}` : undefined
+  )
 }
 
 main(parseArguments(process.argv.slice(2)))

@@ -40,7 +40,8 @@ The command will return an error if there are any packages that need a major ver
 
 ## Exclude Packages
 
-You can ignore specific dependencies to ensure the check returns an exit code 0:
+You can ignore specific dependencies to ensure the check returns an exit code 0.
+Excluded dependencies are reported as info (exit code 0) instead of failing:
 
 ```sh
 check-updates --exclude=awilix --exclude=jsonpath-plus --exclude=stripe
@@ -52,6 +53,24 @@ check-updates --exclude=awilix --exclude=jsonpath-plus --exclude=stripe
     "data": {
       "jobName": "check-updates",
       "message": "Major update available for: awilix,jsonpath-plus,stripe"
+    }
+  }
+}
+```
+
+If some dependencies still have a pending major update after applying the
+excludes, only those are notified and the command returns an error:
+
+```sh
+check-updates --exclude=awilix
+
+2024-10-08T18:34:51.341Z ERROR Job check-updates finished failed
+{
+  "type": {
+    "name": "job",
+    "data": {
+      "jobName": "check-updates",
+      "message": "Major update available for: jsonpath-plus,stripe"
     }
   }
 }
