@@ -76,6 +76,52 @@ check-updates --exclude=awilix
 }
 ```
 
+## Auto-generate the Exclude List
+
+Maintaining the `--exclude` flags by hand is tedious. Run `--add-exclude` to
+regenerate them automatically: it reads the `check-updates` script from your
+`package.json`, detects which dependencies currently have a pending major
+update, and rewrites that script's `--exclude` flags to match.
+
+```sh
+check-updates --add-exclude
+
+2024-10-08T18:40:12.001Z INFO Job check-updates finished success
+{
+  "type": {
+    "name": "job",
+    "data": {
+      "jobName": "check-updates",
+      "message": "Updated check-updates excludes: awilix,jsonpath-plus,stripe"
+    }
+  }
+}
+```
+
+Given this script in your `package.json`:
+
+```json
+{
+  "scripts": {
+    "check-updates": "check-updates --exclude=awilix"
+  }
+}
+```
+
+After running `check-updates --add-exclude` it becomes:
+
+```json
+{
+  "scripts": {
+    "check-updates": "check-updates --exclude=awilix --exclude=jsonpath-plus --exclude=stripe"
+  }
+}
+```
+
+The exclude list is fully regenerated, so packages that no longer have a
+pending major update are removed. If there is no `check-updates` script in
+`package.json`, nothing is changed and the command exits successfully.
+
 ## Add it as a Script in your Package
 
 It is recommended to add it as a script in your package.json for easier usage:
