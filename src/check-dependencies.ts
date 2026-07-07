@@ -10,8 +10,8 @@ export const packagesToUpdate = async () => {
       packageName,
       { currentVersionSemver, upgradedVersionSemver }
     ) => {
-      const currentMajor = parseInt(currentVersionSemver[0]?.major, 10)
-      const upgradedMajor = parseInt(upgradedVersionSemver?.major, 10)
+      const currentMajor = parseInt(currentVersionSemver[0]?.major ?? '', 10)
+      const upgradedMajor = parseInt(upgradedVersionSemver?.major ?? '', 10)
 
       if (hasVersion(currentMajor) && hasVersion(upgradedMajor))
         return currentMajor !== upgradedMajor
